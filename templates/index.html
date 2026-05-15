@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Low Game</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>High-Low Game</h1>
+
+        <!-- Setup Screen -->
+        <div id="setup-screen">
+
+            <p>Select number of rounds (1-15)</p>
+
+            <input
+                type="number"
+                id="rounds-input"
+                min="1"
+                max="15"
+                value="5"
+            >
+
+            <br><br>
+
+            <button onclick="startGame()">
+                Start Game
+            </button>
+
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" style="display:none;">
+
+            <p id="round"></p>
+
+            <p>Your Number:</p>
+
+            <h2 id="player-number"></h2>
+
+            <p>
+                Do you think your number is higher or lower than the computer's?
+            </p>
+
+            <div class="buttons">
+
+                <button
+                    id="higher-btn"
+                    onclick="sendGuess('higher')"
+                >
+                    Higher
+                </button>
+
+                <button
+                    id="lower-btn"
+                    onclick="sendGuess('lower')"
+                >
+                    Lower
+                </button>
+
+            </div>
+
+            <p id="result"></p>
+
+            <p id="score"></p>
+
+        </div>
+
+    </div>
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
