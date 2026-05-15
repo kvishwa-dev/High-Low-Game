@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 import random
+import os
 
 app = Flask(__name__)
 
@@ -86,8 +87,6 @@ def guess():
 
     return jsonify(response)
 
-
-import os
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))

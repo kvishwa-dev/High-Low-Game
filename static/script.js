@@ -23,7 +23,7 @@ async function startGame() {
     document.getElementById("higher-btn").disabled = false;
     document.getElementById("lower-btn").disabled = false;
 
-    // Clear old result
+    // Clear previous result
     document.getElementById("result").innerText = "";
 
     updateUI(data);
@@ -57,6 +57,10 @@ async function sendGuess(answer) {
     });
 
     const data = await res.json();
+
+    // Always update score
+    document.getElementById("score").innerText =
+        `Score: ${data.score}`;
 
     if (data.correct) {
 
